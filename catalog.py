@@ -39,13 +39,4 @@ class Catalog:
                 books.remove(i)
                 print(f'Book named {name}, deleted.')
         FileReader.write_file(data = books)
-    
-#Catalog.add_book()
-#Catalog.search_by_name(name = 'pirma')
-# a = Catalog.search_by_name(name = 'pirma')
-# print(books)
-#Catalog.add_book('ketv','ketc', 33, 5)
-# Catalog.remove_book('ketv')
-# #print(books)
-# print(books)
-# Catalog.display_books()
+
