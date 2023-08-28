@@ -14,7 +14,6 @@ class Catalog:
     def display_books(self):
         for i in self.books:
             print(i)
-
     
     def search_by_name(self, name):
         for i in FileReader.read_file():
