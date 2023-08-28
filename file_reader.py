@@ -16,9 +16,10 @@ class FileReader:
     
     def write_file(data):
         with open('library.csv','w', newline = '') as file:
-            # su DictWriter b
-            fieldnames = ['Book name', 'Author', 'Release year', 'Quantity']
+            fieldnames = ['Book name','Author','Release year','Quantity']
             writer = csv.DictWriter(file, fieldnames = fieldnames)
-            writer.writerows(data)
+            writer.writeheader()
+            for i in data:
+                writer.writerow(i)
             
             

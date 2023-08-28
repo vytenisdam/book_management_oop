@@ -14,28 +14,39 @@ class Catalog:
     def display_books(self):
         for i in self.books:
             print(i)
-        # FileReader.read_file()
-        # for i in books:
-        #     print(Book.get_name(i), Book.get_author(i), Book.get_year(i), Book.get_quantity(i))
+
     
-    def search_by_name():
-        #new_data = []
+    def search_by_name(self, name):
         for i in FileReader.read_file():
-            print(i)
-        # for i in new_data:
-        #     print(i)
-            # if i['Book name'] == name:
-            #     print(i)
+            if i['Book name'] == name:
+                return i
             
     def search_by_author(self, author):
         pass
     
-    def add_book(self, name, author, year, quantity):
+    def add_book(self,name, author, year, quantity):
         a = Book(name,author,year,quantity)
-        books.append(a)
+        name = a.get_name()
+        author = a.get_author()
+        year = a.get_year()
+        quantity = a.get_quantity()
+        books.append({'Book name': name,'Author': author,'Release year': year,'Quantity': quantity})
+        print(f'Book named {name}, was added.')
         FileReader.write_file(books)
     
-    def remove_book(self, name, author, year):
-        pass
+    def remove_book(self, name):
+        for i in FileReader.read_file():
+            if i['Book name'] == name:
+                books.remove(i)
+                print(f'Book named {name}, deleted.')
+        FileReader.write_file(data = books)
     
-Catalog.add_book()
+#Catalog.add_book()
+#Catalog.search_by_name(name = 'pirma')
+# a = Catalog.search_by_name(name = 'pirma')
+# print(books)
+#Catalog.add_book('ketv','ketc', 33, 5)
+# Catalog.remove_book('ketv')
+# #print(books)
+# print(books)
+# Catalog.display_books()
